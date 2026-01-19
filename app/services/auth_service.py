@@ -6,4 +6,9 @@ def login_user(email: str, password: str):
     user = get_user_by_email(email)
     if not user or not verify_password(password, user["password"]):
         return None
-    return create_access_token({"user_id": str(user["_id"])})
+
+    return create_access_token({
+        "user_id": str(user["_id"]),
+        "tenant_id": user["tenant_id"],
+        "role": user["role"]
+    })

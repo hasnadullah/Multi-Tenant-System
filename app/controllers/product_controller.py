@@ -1,15 +1,13 @@
-from app.services.product_service import add_product, list_products, edit_product, remove_product
+from app.services.product_service import *
 
+def create(name, user):
+    add_product(name, user)
 
+def get_all(user):
+    return list_products(user)
 
-def create(name: str, user_id: str):
-    add_product(name, user_id)
+def update(product_id, name, user):
+    edit_product(product_id, name, user)
 
-def get_all(user_id: str):
-    return list_products(user_id)
-
-def update(product_id: str, new_name: str, user_id: str):
-    edit_product(product_id, user_id, new_name)
-
-def delete(product_id: str, user_id: str):
-    remove_product(product_id, user_id)
+def delete(product_id, user):
+    remove_product(product_id, user)

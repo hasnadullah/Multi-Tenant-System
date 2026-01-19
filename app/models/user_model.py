@@ -1,5 +1,7 @@
 def user_entity(user):
     return {
         "id": str(user["_id"]),
-        "email": user["email"]
+        "email": user["email"],
+        "tenant_id": user["tenant_id"],
+        "role": user["role"]
     }
